@@ -1,0 +1,26 @@
+Download Net Beans : https://dlcdn.apache.org/netbeans/netbeans-installers/12.6/Apache-NetBeans-12.6-bin-windows-x64.exe
+
+Download MySQL : https://downloads.mysql.com/archives/get/p/8/file/mysql-workbench-community-8.0.27-winx64.msi
+
+file > open project > our project
+
+Open services
+
+Libraries > Add libaray > MySQL - jar file
+
+Window > services > Drivers > MySQL (Connector/J driver)[right click] > Connect using...> Add > MySQL - jar files > Finish
+
+Window > services > enter userName and Password > Test Connection > If successful click Finish
+
+In Services > Expand Databases > MYSQL Server[right click] > Connect
+
+Run the mysql file
+
+Addstaff module sql file
+
+Window > services > click on mysql server > right click on stafflogms >click connect
+
+Expand Source Packages  >  Expand Staff > Right Click on Front_Page.java > click run file
+
+Admin : admin@gmail.com
+Admin Password : pass1234

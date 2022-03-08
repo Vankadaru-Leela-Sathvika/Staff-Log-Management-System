@@ -1,0 +1,12 @@
+drop database stafflogms;
+create database stafflogms;
+use stafflogms;
+create table admin(adminid varchar(10) primary key, username varchar(20),password varchar(20));
+insert into admin values("adminid001","admin@gmail.com","pass1234");
+create table staff(staffid varchar(10) primary key,fname varchar(50),lname varchar(50),gender varchar(10),age int,address varchar(100),phoneno varchar(10),email varchar(100),password varchar(100));
+create table salary(staffid varchar(10),foreign key(staffid) references staff(staffid),dailywage int,bonus int);
+create table dept(deptid varchar(10) primary key,deptname varchar(30));
+create table jobtitle(jobid varchar(10) primary key,jobrole varchar(100),deptid varchar(10),foreign key(deptid) references dept(deptid),staffid varchar(10),foreign key(staffid) references staff(staffid));
+create table onduty(dutyid int primary key auto_increment ,staffid varchar(10),foreign key(staffid) references staff(staffid),jobid varchar(10),foreign key(jobid) references jobtitle(jobid),duration int,date date);
+create table staffleave(leaveid int primary key auto_increment,staffid varchar(10),foreign key(staffid) references staff(staffid),jobid varchar(10),foreign key(jobid) references jobtitle(jobid),name varchar(40),date date,reason varchar(100),status varchar(20));
+insert into dept values("deptid1001","SD"),("deptid1002","RD"),("deptid1003","HR"),("deptid1004","AD"),("deptid1005","SS");

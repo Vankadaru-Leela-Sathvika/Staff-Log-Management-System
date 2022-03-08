@@ -1,0 +1,10 @@
+create database stafflogms;
+use stafflogms;
+create table admin(adminid int primary key auto_increment,username varchar(20) unique,password varchar(20));
+alter table admin auto_increment=1000;
+insert into admin(username,password) values('admin@gmail.com','pass1234');
+select * from admin;
+create table staffdetails(staffid varchar(10) primary key ,username varchar(20) unique,password varchar(20),name varchar(40) not null,age int,gender varchar(10),emailid varchar(20),phoneno varchar(10),employmenttype varchar(20),role varchar(20),address varchar(50),dob date,education varchar(30),aadharno varchar(12),achievements varchar(20));
+create table leaverequests(staffid varchar(10),name varchar(40),fromdate varchar(10),todate varchar(10),numberofdays varchar(3),reason varchar(100));
+create table stafflogs(staffid varchar(10) primary key,numberofworkingdays int,numberofleaves int);
+insert into stafflogs values('1001',100,2);
