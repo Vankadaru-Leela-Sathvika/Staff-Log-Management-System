@@ -34,13 +34,14 @@ class Add_Staff implements ActionListener {
         id8 = new JLabel("New Staff Details");
         id8.setBounds(350, 30, 500, 50);
         id8.setFont(new Font("serif", Font.BOLD, 25));
-        id8.setForeground(Color.black);
+        id8.setForeground(Color.white);
         id15.add(id8);
         f.add(id15);
 
         id1 = new JLabel("staffid");
         id1.setBounds(50, 150, 100, 30);
         id1.setFont(new Font("serif", Font.BOLD, 20));
+        id1.setForeground(Color.white);
         id15.add(id1);
 
         t1 = new JTextField();
@@ -50,6 +51,7 @@ class Add_Staff implements ActionListener {
         id3 = new JLabel("First Name");
         id3.setBounds(50, 200, 100, 30);
         id3.setFont(new Font("serif", Font.BOLD, 20));
+        id3.setForeground(Color.white);
         id15.add(id3);
 
         t3 = new JTextField();
@@ -59,6 +61,7 @@ class Add_Staff implements ActionListener {
         id4 = new JLabel("Last Name");
         id4.setBounds(400, 200, 200, 30);
         id4.setFont(new Font("serif", Font.BOLD, 20));
+        id4.setForeground(Color.white);
         id15.add(id4);
 
         t4 = new JTextField();
@@ -68,6 +71,7 @@ class Add_Staff implements ActionListener {
         id5 = new JLabel("Gender");
         id5.setBounds(50, 250, 100, 30);
         id5.setFont(new Font("serif", Font.BOLD, 20));
+        id5.setForeground(Color.white);
         id15.add(id5);
 
         t5 = new JTextField();
@@ -77,6 +81,7 @@ class Add_Staff implements ActionListener {
         id6 = new JLabel("Age");
         id6.setBounds(400, 250, 100, 30);
         id6.setFont(new Font("serif", Font.BOLD, 20));
+        id6.setForeground(Color.white);
         id15.add(id6);
 
         t6 = new JTextField();
@@ -86,6 +91,7 @@ class Add_Staff implements ActionListener {
         id7 = new JLabel("Address");
         id7.setBounds(50, 300, 100, 30);
         id7.setFont(new Font("serif", Font.BOLD, 20));
+        id7.setForeground(Color.white);
         id15.add(id7);
 
         t7 = new JTextField();
@@ -95,6 +101,7 @@ class Add_Staff implements ActionListener {
         id8 = new JLabel("Phone No");
         id8.setBounds(400, 300, 100, 30);
         id8.setFont(new Font("serif", Font.BOLD, 20));
+        id8.setForeground(Color.white);
         id15.add(id8);
 
         t8 = new JTextField();
@@ -104,6 +111,7 @@ class Add_Staff implements ActionListener {
         id9 = new JLabel("Email ID");
         id9.setBounds(50, 350, 100, 30);
         id9.setFont(new Font("serif", Font.BOLD, 20));
+        id9.setForeground(Color.white);
         id15.add(id9);
 
         t9 = new JTextField();
@@ -113,6 +121,7 @@ class Add_Staff implements ActionListener {
         id10 = new JLabel("Password");
         id10.setBounds(400, 350, 100, 30);
         id10.setFont(new Font("serif", Font.BOLD, 20));
+        id10.setForeground(Color.white);
         id15.add(id10);
 
         t10 = new JPasswordField();
@@ -122,6 +131,7 @@ class Add_Staff implements ActionListener {
         id11 = new JLabel("Job ID");
         id11.setBounds(50, 400, 150, 30);
         id11.setFont(new Font("serif", Font.BOLD, 20));
+        id11.setForeground(Color.white);
         id15.add(id11);
 
         t11 = new JTextField();
@@ -131,6 +141,7 @@ class Add_Staff implements ActionListener {
         id12 = new JLabel("Job Title");
         id12.setBounds(400, 400, 150, 30);
         id12.setFont(new Font("serif", Font.BOLD, 20));
+        id12.setForeground(Color.white);
         id15.add(id12);
 
         t12 = new JTextField();
@@ -140,6 +151,7 @@ class Add_Staff implements ActionListener {
         id13 = new JLabel("Department ID");
         id13.setBounds(50, 450, 150, 30);
         id13.setFont(new Font("serif", Font.BOLD, 20));
+        id13.setForeground(Color.white);
         id15.add(id13);
 
         t13 = new JTextField();

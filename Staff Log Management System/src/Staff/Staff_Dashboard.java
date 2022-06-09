@@ -81,7 +81,7 @@ class Staff_Dashboard implements ActionListener {
         }
         if (ae.getSource() == b2) {
             f.setVisible(false);
-            View_Leaves frame = new View_Leaves("1001");
+            View_Leaves frame = new View_Leaves(staffid);
             frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
             frame.pack();
             frame.setVisible(true);
