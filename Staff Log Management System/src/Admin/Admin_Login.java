@@ -4,6 +4,7 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 import java.sql.*;
+import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
 public class Admin_Login  implements ActionListener{
 
@@ -67,6 +68,8 @@ public class Admin_Login  implements ActionListener{
         f.setVisible(true);
         f.setSize(700,250);
         f.setLocation(400,300);
+        f.setDefaultCloseOperation(EXIT_ON_CLOSE);
+
 
     }
 
@@ -83,7 +86,7 @@ public class Admin_Login  implements ActionListener{
 
             ResultSet rs = c1.s.executeQuery(q); 
             if(rs.next()){
-                new Admin_Dashboard().f.setVisible(true);
+                new Admin_Dashboard(rs.getString(1)).f.setVisible(true);
                 f.setVisible(false);
             }else{
                 JOptionPane.showMessageDialog(null, "Invalid login");

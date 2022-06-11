@@ -10,8 +10,9 @@ class Search_Staff implements ActionListener {
     JTextField t;
     JLabel l, l5;
     JButton b, b2;
-
-    Search_Staff() {
+    String adminid;
+    Search_Staff(String adminid) {
+        this.adminid=adminid;
         f = new JFrame("Search Staff");
         f.setBackground(Color.green);
         f.setLayout(null);
@@ -56,16 +57,16 @@ class Search_Staff implements ActionListener {
     public void actionPerformed(ActionEvent ae) {
         if (ae.getSource() == b2) {
             f.setVisible(false);
-            Admin_Dashboard d = new Admin_Dashboard();
+            Admin_Dashboard d = new Admin_Dashboard(adminid);
         }
         if (ae.getSource() == b) {
-            new Add_Salary_Details(t.getText());
+            new Add_Salary_Details(t.getText(),adminid);
             f.setVisible(false);
         }
 
     }
 
     public static void main(String[] ar) {
-        new Search_Staff();
+        new Search_Staff("adminid001");
     }
 }

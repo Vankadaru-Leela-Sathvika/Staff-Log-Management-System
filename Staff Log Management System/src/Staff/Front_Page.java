@@ -5,6 +5,7 @@ import java.awt.*;
 import javax.swing.*;
 import java.lang.Thread;
 import java.awt.event.*;
+import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
 public class Front_Page implements ActionListener {
 
@@ -57,6 +58,7 @@ public class Front_Page implements ActionListener {
         f.setLocation(50, 50);
         f.setExtendedState(JFrame.MAXIMIZED_BOTH);
         f.setVisible(true);
+        f.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
     }
 
@@ -74,5 +76,6 @@ public class Front_Page implements ActionListener {
 
     public static void main(String[] arg) {
         Front_Page f = new Front_Page();
+        
     }
 }

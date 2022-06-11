@@ -10,8 +10,9 @@ class Manage_Staff implements ActionListener {
     JTextField t;
     JLabel l, l5;
     JButton b, b1, b2;
-
-    Manage_Staff() {
+    String adminid;
+    Manage_Staff(String adminid) {
+        this.adminid=adminid;
         f = new JFrame("Manage Staff");
         f.setBackground(Color.green);
         f.setLayout(null);
@@ -61,20 +62,20 @@ class Manage_Staff implements ActionListener {
     public void actionPerformed(ActionEvent ae) {
 
         if (ae.getSource() == b) {
-            new Update_Staff(t.getText());
+            new Update_Staff(t.getText(),adminid);
             f.setVisible(false);
         }
         if (ae.getSource() == b1) {
-            new Remove_Staff(t.getText());
+            new Remove_Staff(t.getText(),adminid);
             f.setVisible(false);
         }
         if (ae.getSource() == b2) {
             f.setVisible(false);
-            Admin_Dashboard d = new Admin_Dashboard();
+            Admin_Dashboard d = new Admin_Dashboard(adminid);
         }
     }
 
     public static void main(String[] ar) {
-        new Manage_Staff();
+        new Manage_Staff("adminid001");
     }
 }

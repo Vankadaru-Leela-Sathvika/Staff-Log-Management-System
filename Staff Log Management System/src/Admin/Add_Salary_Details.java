@@ -13,9 +13,10 @@ class Add_Salary_Details implements ActionListener {
     JButton b, b1, b2, b3;
     String staffid;
     String dailywage, bonus;
-
-    public Add_Salary_Details(String staffid) {
+    String adminid;
+    public Add_Salary_Details(String staffid,String adminid) {
         this.staffid = staffid;
+        this.adminid=adminid;
         try {
             conn con = new conn();
             String str = "select * from salary where staffid = '" + staffid + "'";
@@ -103,18 +104,18 @@ class Add_Salary_Details implements ActionListener {
                 con.s.executeUpdate(str);
                 JOptionPane.showMessageDialog(null, "successfully updated");
                 f.setVisible(false);
-                new Admin_Dashboard();
+                new Admin_Dashboard(adminid);
             } catch (Exception e) {
                 System.out.println("The error is:" + e);
             }
         }
         if (ae.getSource() == b1) {
             f.setVisible(false);
-            Admin_Dashboard d = new Admin_Dashboard();
+            Admin_Dashboard d = new Admin_Dashboard(adminid);
         }
     }
 
     public static void main(String[] arg) {
-        new Add_Salary_Details("stafftrial");
+        new Add_Salary_Details("stafftrial","adminid001");
     }
 }

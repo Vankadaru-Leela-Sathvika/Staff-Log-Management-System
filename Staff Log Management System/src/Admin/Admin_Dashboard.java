@@ -11,8 +11,9 @@ public class Admin_Dashboard implements ActionListener {
     JFrame f;
     JLabel l1, l2;
     JButton b1, b2, b3, b4, b5, b6, b7, b8;
-
-    Admin_Dashboard() {
+    String adminid;
+    Admin_Dashboard(String adminid) {
+        this.adminid=adminid;
         f = new JFrame("Admin Dashboard");
         f.setBackground(Color.white);
         f.setLayout(null);
@@ -76,39 +77,40 @@ public class Admin_Dashboard implements ActionListener {
         f.setVisible(true);
         f.setSize(700, 500);
         f.setLocation(450, 200);
+        f.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
     }
 
     public void actionPerformed(ActionEvent ae) {
         if (ae.getSource() == b1) {
             f.setVisible(false);
-            new Add_Staff();
+            new Add_Staff(adminid);
         }
         if (ae.getSource() == b2) {
             f.setVisible(false);
-            new Manage_Staff();
+            new Manage_Staff(adminid);
         }
         if (ae.getSource() == b3) {
             f.setVisible(false);
-            new Search_Staff();
+            new Search_Staff(adminid);
         }
         if (ae.getSource() == b4) {
             f.setVisible(false);
-            View_Leave_Requests frame = new View_Leave_Requests();
+            View_Leave_Requests frame = new View_Leave_Requests(adminid);
             frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
             frame.pack();
             frame.setVisible(true);
         }
         if (ae.getSource() == b5) {
             f.setVisible(false);
-            Manage_Leave_Requests frame = new Manage_Leave_Requests();
+            Manage_Leave_Requests frame = new Manage_Leave_Requests(adminid);
             frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
             frame.pack();
             frame.setVisible(true);
         }
         if (ae.getSource() == b6) {
             f.setVisible(false);
-            View_Staff_Logs frame = new View_Staff_Logs();
+            View_Staff_Logs frame = new View_Staff_Logs(adminid);
             frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
             frame.pack();
             frame.setVisible(true);
@@ -120,6 +122,6 @@ public class Admin_Dashboard implements ActionListener {
     }
 
     public static void main(String[] arg) {
-        Admin_Dashboard d = new Admin_Dashboard();
+        Admin_Dashboard d = new Admin_Dashboard("adminid001");
     }
 }

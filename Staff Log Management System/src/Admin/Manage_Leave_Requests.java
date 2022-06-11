@@ -14,8 +14,9 @@ public class Manage_Leave_Requests extends JFrame implements ActionListener {
     JTextField t;
     JButton l, l5;
     JButton b, b2;
-
-    public Manage_Leave_Requests() {
+    String adminid;
+    public Manage_Leave_Requests(String adminid) {
+        this.adminid=adminid;
         l = new JButton("Manage Leave Requests");
         l.setVisible(true);
         l.setBounds(50, 20, 400, 30);
@@ -91,7 +92,7 @@ public class Manage_Leave_Requests extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent ae) {
         if (ae.getSource() == l) {
             try {
-                new Leave_A_R();
+                new Leave_A_R("adminid001");
             } catch (Exception ee) {
                 System.out.println("The error is:" + ee);
             }
@@ -101,7 +102,7 @@ public class Manage_Leave_Requests extends JFrame implements ActionListener {
     }
 
     public static void main(String[] args) {
-        Manage_Leave_Requests frame = new Manage_Leave_Requests();
+        Manage_Leave_Requests frame = new Manage_Leave_Requests("adminid001");
         frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);

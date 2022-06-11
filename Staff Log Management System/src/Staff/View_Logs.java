@@ -1,15 +1,18 @@
 package Staff;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.sql.*;
 import java.util.*;
 import javax.swing.*;
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
-import javax.swing.table.*;
 
-public class View_Logs extends JFrame {
-
+public class View_Logs extends JFrame implements ActionListener{
+    JButton b1;
+    String staffid;
     public View_Logs(String staffid) {
+        this.staffid=staffid;
         ArrayList columnNames = new ArrayList();
         ArrayList data = new ArrayList();
 
@@ -73,6 +76,16 @@ public class View_Logs extends JFrame {
 
         JPanel buttonPanel = new JPanel();
         getContentPane().add(buttonPanel, BorderLayout.SOUTH);
+        b1 = new JButton("Cancel");
+        b1.setBounds(200, 200, 100, 30);
+        b1.addActionListener(this);
+        buttonPanel.add(b1);
+    }
+    public void actionPerformed(ActionEvent ae) {
+         if (ae.getSource() == b1) {
+            this.setVisible(false);
+            new Staff_Dashboard(staffid);
+        }
     }
 
     public static void main(String[] args) {

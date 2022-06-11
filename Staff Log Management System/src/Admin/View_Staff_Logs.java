@@ -1,14 +1,17 @@
 package Admin;
 
 import java.awt.*;
+import java.awt.event.*;
+import java.awt.event.ActionListener;
 import java.sql.*;
 import java.util.*;
 import javax.swing.*;
-import javax.swing.table.*;
 
-public class View_Staff_Logs extends JFrame {
-
-    public View_Staff_Logs() {
+public class View_Staff_Logs extends JFrame implements ActionListener{
+    JButton b1;
+    String adminid;
+    public View_Staff_Logs(String adminid) {
+        this.adminid=adminid;
         ArrayList columnNames = new ArrayList();
         ArrayList data = new ArrayList();
 
@@ -66,16 +69,25 @@ public class View_Staff_Logs extends JFrame {
                 return Object.class;
             }
         };
-
         JScrollPane scrollPane = new JScrollPane(table);
         getContentPane().add(scrollPane);
 
         JPanel buttonPanel = new JPanel();
         getContentPane().add(buttonPanel, BorderLayout.SOUTH);
+        b1 = new JButton("Cancel");
+        b1.setBounds(200, 200, 100, 30);
+        b1.addActionListener(this);
+        buttonPanel.add(b1);
+    }
+    public void actionPerformed(ActionEvent ae) {
+         if (ae.getSource() == b1) {
+            this.setVisible(false);
+            new Admin_Dashboard(adminid);
+        }
     }
 
     public static void main(String[] args) {
-        View_Staff_Logs frame = new View_Staff_Logs();
+        View_Staff_Logs frame = new View_Staff_Logs("adminid001");
         frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);

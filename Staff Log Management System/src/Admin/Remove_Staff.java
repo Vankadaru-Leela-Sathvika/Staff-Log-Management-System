@@ -12,8 +12,9 @@ class Remove_Staff implements ActionListener {
     JLabel l, l1, l2, l3, l4, l5, l6, l7, l8;
     JButton b, b1, b2, b3;
     String staffid;
-
-    Remove_Staff(String staffid) {
+    String adminid;
+    Remove_Staff(String staffid,String adminid) {
+        this.adminid=adminid;
         f = new JFrame("Remove Staff");
         f.setBackground(Color.green);
         f.setLayout(null);
@@ -66,7 +67,7 @@ class Remove_Staff implements ActionListener {
                 b1.setVisible(false);
                 JOptionPane.showMessageDialog(null, "deleted successfully");
                 f.setVisible(false);
-                Manage_Staff d = new Manage_Staff();
+                Manage_Staff d = new Manage_Staff(adminid);
 
             } catch (Exception ex) {
                 JOptionPane.showMessageDialog(null, "Exception occured while delting record " + ex);
@@ -75,11 +76,11 @@ class Remove_Staff implements ActionListener {
 
         if (ae.getSource() == b3) {
             f.setVisible(false);
-            Manage_Staff d = new Manage_Staff();
+            Manage_Staff d = new Manage_Staff(adminid);
         }
     }
 
     public static void main(String[] arg) {
-        new Remove_Staff("stafftrial");
+        new Remove_Staff("stafftrial","adminid001");
     }
 }

@@ -59,8 +59,8 @@ class Search_Logs implements ActionListener {
             Staff_Dashboard d = new Staff_Dashboard(staffid);
         }
         if (ae.getSource() == b) {
+            f.setVisible(false);
             Get_Logs frame = new Get_Logs(t.getText(), staffid);
-
             frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
             frame.pack();
             frame.setVisible(true);

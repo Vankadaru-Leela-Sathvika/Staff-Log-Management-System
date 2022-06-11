@@ -12,11 +12,9 @@ class Add_Staff implements ActionListener {
     JLabel id, id1, id2, id3, id4, id5, id6, id7, id8, id9, id10, id11, id12, id13, id14, id15, id16, id17, lab, lab1;
     JTextField t, t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12, t13, t14;
     JButton b, b1, b2, b3;
-
-    Add_Staff(int i) {
-    }
-
-    Add_Staff() {
+    String adminid; 
+    Add_Staff(String adminid) {
+        this.adminid=adminid;
         f = new JFrame("ADD STAFF");
         f.setBackground(Color.white);
         f.setLayout(null);
@@ -211,17 +209,17 @@ class Add_Staff implements ActionListener {
                 cc.s.executeUpdate(q1);
                 JOptionPane.showMessageDialog(null, "Details Successfully Inserted");
                 f.setVisible(false);
-                new Admin_Dashboard();
+                new Admin_Dashboard(adminid);
             } catch (Exception ee) {
                 System.out.println("The error is:" + ee);
             }
         } else if (ae.getSource() == b1) {
             f.setVisible(false);
-            new Admin_Dashboard();
+            new Admin_Dashboard(adminid);
         }
     }
 
     public static void main(String[] arg) {
-        new Add_Staff();
+        new Add_Staff("adminid001");
     }
 }

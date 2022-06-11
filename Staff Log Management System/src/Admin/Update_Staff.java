@@ -13,9 +13,9 @@ class Update_Staff implements ActionListener {
     JButton b, b1, b2, b3;
     String staffid;
     String fname, lname, gender, age, address, phoneno, email, password, jobid, jobtitle, deptid;
-
-    Update_Staff(String staffid) {
-
+    String adminid;
+    Update_Staff(String staffid,String adminid) {
+        this.adminid=adminid;
         this.staffid = staffid;
         try {
             conn con = new conn();
@@ -215,18 +215,18 @@ class Update_Staff implements ActionListener {
                 cc.s.executeUpdate(q1);
                 JOptionPane.showMessageDialog(null, "Successfully Updates");
                 f.setVisible(false);
-                new Manage_Staff();
+                new Manage_Staff(adminid);
             } catch (Exception ee) {
                 System.out.println("The error is:" + ee);
             }
         }
         if (ae.getSource() == b1) {
             f.setVisible(false);
-            Admin_Dashboard d = new Admin_Dashboard();
+            Admin_Dashboard d = new Admin_Dashboard(adminid);
         }
     }
 
     public static void main(String[] args) {
-        new Update_Staff("staffid002");
+        new Update_Staff("staffid002","adminid001");
     }
 }

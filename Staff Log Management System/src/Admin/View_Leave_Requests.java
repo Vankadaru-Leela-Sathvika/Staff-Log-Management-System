@@ -1,14 +1,17 @@
 package Admin;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.sql.*;
 import java.util.*;
 import javax.swing.*;
-import javax.swing.table.*;
 
-public class View_Leave_Requests extends JFrame {
-
-    public View_Leave_Requests() {
+public class View_Leave_Requests extends JFrame implements ActionListener{
+    JButton b1;
+    String adminid;
+    public View_Leave_Requests(String adminid) {
+        this.adminid=adminid;
         ArrayList columnNames = new ArrayList();
         ArrayList data = new ArrayList();
 
@@ -71,11 +74,21 @@ public class View_Leave_Requests extends JFrame {
 
         JPanel buttonPanel = new JPanel();
         getContentPane().add(buttonPanel, BorderLayout.SOUTH);
+        b1 = new JButton("Cancel");
+        b1.setBounds(200, 200, 100, 30);
+        b1.addActionListener(this);
+        buttonPanel.add(b1);
 
     }
+    public void actionPerformed(ActionEvent ae) {
+         if (ae.getSource() == b1) {
+            this.setVisible(false);
+            new Admin_Dashboard(adminid);
+        }
+    }    
 
     public static void main(String[] args) {
-        View_Leave_Requests frame = new View_Leave_Requests();
+        View_Leave_Requests frame = new View_Leave_Requests("adminid001");
         frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);

@@ -10,8 +10,9 @@ class Leave_A_R implements ActionListener {
     JTextField t;
     JLabel l, l5;
     JButton b, b2;
-
-    Leave_A_R() {
+    String adminid;
+    Leave_A_R(String adminid) {
+        this.adminid=adminid;
         f = new JFrame("Manage Leaves");
         f.setBackground(Color.green);
         f.setLayout(null);
@@ -61,7 +62,7 @@ class Leave_A_R implements ActionListener {
                 cc.s.executeUpdate(q);
                 JOptionPane.showMessageDialog(null, "Details Successfully Inserted");
 
-                new Admin_Dashboard();
+                new Admin_Dashboard(adminid);
             } catch (Exception ee) {
                 System.out.println("The error is:" + ee);
             }
@@ -73,7 +74,7 @@ class Leave_A_R implements ActionListener {
                 String q = "Update staffleave set status='Rejected' where leaveid='" + t.getText() + "';";
                 cc.s.executeUpdate(q);
                 JOptionPane.showMessageDialog(null, "Details Successfully Inserted");
-                new Admin_Dashboard();
+                new Admin_Dashboard(adminid);
             } catch (Exception ee) {
                 System.out.println("The error is:" + ee);
             }
@@ -81,6 +82,6 @@ class Leave_A_R implements ActionListener {
     }
 
     public static void main(String[] ar) {
-        new Leave_A_R();
+        new Leave_A_R("adminid001");
     }
 }
