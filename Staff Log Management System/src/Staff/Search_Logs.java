@@ -13,8 +13,8 @@ class Search_Logs implements ActionListener {
     JButton b, b2;
     String staffid;
 
-    Search_Logs(String Staffid) {
-        this.staffid = staffid;
+    Search_Logs(String staffid) {
+        this.staffid=staffid;
         f = new JFrame("Search Log");
         f.setBackground(Color.green);
         f.setLayout(null);
@@ -56,7 +56,7 @@ class Search_Logs implements ActionListener {
     public void actionPerformed(ActionEvent ae) {
         if (ae.getSource() == b2) {
             f.setVisible(false);
-            Staff_Dashboard d = new Staff_Dashboard(staffid);
+            new Staff_Dashboard(staffid);
         }
         if (ae.getSource() == b) {
             f.setVisible(false);

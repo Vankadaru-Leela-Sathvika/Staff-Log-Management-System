@@ -3,6 +3,7 @@ package Admin;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
 class Manage_Staff implements ActionListener {
 
@@ -57,6 +58,7 @@ class Manage_Staff implements ActionListener {
         f.setSize(500, 270);
         f.setLocation(450, 250);
         f.setVisible(true);
+        f.setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 
     public void actionPerformed(ActionEvent ae) {

@@ -4,6 +4,7 @@ import java.sql.*;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
 class Remove_Staff implements ActionListener {
 
@@ -22,8 +23,11 @@ class Remove_Staff implements ActionListener {
         l5 = new JLabel();
         l5.setBounds(0, 0, 500, 500);
         l5.setLayout(null);
-        ImageIcon img = new ImageIcon(ClassLoader.getSystemResource("icons/remove.png"));
-        l5.setIcon(img);
+        ImageIcon imageIcon = new ImageIcon(ClassLoader.getSystemResource("icons/view.jpg"));
+        Image image = imageIcon.getImage();
+        Image newimg = image.getScaledInstance(500, 500, java.awt.Image.SCALE_SMOOTH);
+        imageIcon = new ImageIcon(newimg);
+        l5.setIcon(imageIcon);
         f.add(l5);
 
         l1 = new JLabel("Are you sure you want to remove employee");
@@ -52,6 +56,7 @@ class Remove_Staff implements ActionListener {
         f.setSize(500, 500);
         f.setLocation(500, 250);
         f.setVisible(true);
+        f.setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 
     public void actionPerformed(ActionEvent ae) {
@@ -81,6 +86,6 @@ class Remove_Staff implements ActionListener {
     }
 
     public static void main(String[] arg) {
-        new Remove_Staff("stafftrial","adminid001");
+        new Remove_Staff("trials","adminid001");
     }
 }

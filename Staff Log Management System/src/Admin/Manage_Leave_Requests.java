@@ -10,10 +10,10 @@ import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 import javax.swing.table.*;
 
 public class Manage_Leave_Requests extends JFrame implements ActionListener {
-
+    
     JTextField t;
     JButton l, l5;
-    JButton b, b2;
+    JButton b,b1, b2;
     String adminid;
     public Manage_Leave_Requests(String adminid) {
         this.adminid=adminid;
@@ -86,7 +86,10 @@ public class Manage_Leave_Requests extends JFrame implements ActionListener {
 
         JPanel buttonPanel = new JPanel();
         getContentPane().add(buttonPanel, BorderLayout.SOUTH);
-
+        b1 = new JButton("Cancel");
+        b1.setBounds(200, 200, 100, 30);
+        b1.addActionListener(this);
+        buttonPanel.add(b1);
     }
 
     public void actionPerformed(ActionEvent ae) {
